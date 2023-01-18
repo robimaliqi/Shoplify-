@@ -18,8 +18,6 @@ class CheckoutController < ApplicationController
       success_url: root_url,
       cancel_url: root_url,
     })
-    respond_to do |format|
-      format.js
-    end
+    redirect_to @session.url, allow_other_host: true
   end
 end
